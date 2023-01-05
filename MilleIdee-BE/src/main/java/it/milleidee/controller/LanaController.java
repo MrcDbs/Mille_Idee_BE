@@ -40,6 +40,16 @@ public class LanaController {
 		return this.lanaService.salva(lanaEntity);
 	}
 	
+	@GetMapping(value="/getByGrammi/{grammi}",produces="application/json")
+	public ResponseEntity<List<Lana>> getByGrammi(@PathVariable Integer grammi){
+		return new ResponseEntity<>(this.lanaService.cercaPerGrammi(grammi),HttpStatus.OK);
+	}
+	
+	@GetMapping(value="/getByComposizione/{composizione}",produces="application/json")
+	public ResponseEntity<List<Lana>> getByComposizione(@PathVariable String composizione){
+		return new ResponseEntity<>(this.lanaService.cercaPerComposizione(composizione),HttpStatus.OK);
+	}
+	
 	
 	
 }

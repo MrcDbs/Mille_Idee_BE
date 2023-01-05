@@ -11,4 +11,10 @@ import it.milleidee.model.Lana;
 public interface LanaRepository extends JpaRepository<Lana,Integer>{
 
 	List<Lana> findAll();
+	
+	List<Lana> findByGrammi(Integer grammi);
+	
+	List<Lana> findByComposizioneContains(String comp);
+	
+	List<Lana> findByComposizioneContainsAndComposizioneContains(String comp,String comp2);
 }
